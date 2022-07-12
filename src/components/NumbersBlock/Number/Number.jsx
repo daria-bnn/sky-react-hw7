@@ -11,7 +11,7 @@ const Number = ({ color, number }) => (
 )
 
 Number.propTypes = {
-  color: PropTypes.string.isRequired,
+  color: PropTypes.oneOf(['red', 'green', 'yellow']).isRequired,
   number: PropTypes.number.isRequired,
 }
 
