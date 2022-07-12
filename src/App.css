@@ -2,6 +2,7 @@
   padding-left: calc(50% - 450px);
   padding-right: calc(50% - 450px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
