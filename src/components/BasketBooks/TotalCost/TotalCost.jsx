@@ -1,6 +1,6 @@
-const TotalCost = (props) => {
-  const { books } = props
+import PropTypes from 'prop-types'
 
+const TotalCost = ({ books }) => {
   const sum = books.reduce(
     (previosValue, book) => previosValue + book.quantity * book.price,
     0
@@ -12,6 +12,18 @@ const TotalCost = (props) => {
       <th>{sum}</th>
     </tr>
   )
+}
+
+TotalCost.propTypes = {
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      price: PropTypes.number,
+      rest: PropTypes.number,
+      quantity: PropTypes.number,
+    })
+  ).isRequired,
 }
 
 export default TotalCost

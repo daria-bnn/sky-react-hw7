@@ -1,6 +1,6 @@
-const MinMaxCounter = (props) => {
-  const { id, min, max, current, setQuatinty } = props
+import PropTypes from 'prop-types'
 
+const MinMaxCounter = ({ id, min, max, current, setQuatinty }) => {
   const validate = (event) => {
     const { value } = event.target
     const validValues = /^[1-9]?\d*$/
@@ -52,6 +52,14 @@ const MinMaxCounter = (props) => {
       </button>
     </div>
   )
+}
+
+MinMaxCounter.propTypes = {
+  id: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired,
+  current: PropTypes.number.isRequired,
+  setQuatinty: PropTypes.func.isRequired,
 }
 
 export default MinMaxCounter
