@@ -14,7 +14,7 @@ const NumbersBlock = () => (
     <h2 className={cnNumbersBlock('Title')}>Number Generator</h2>
     <div className={cnNumbersBlock('Container')}>
       {arrayNumbers.map((number) => (
-        <Number number={number} color={checkNumber(number)} />
+        <Number key={number} number={number} color={checkNumber(number)} />
       ))}
     </div>
   </div>
