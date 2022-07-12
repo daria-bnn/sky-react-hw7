@@ -1,0 +1,14 @@
+.NumbersBlock {
+  padding-bottom: 50px;
+}
+
+.NumbersBlock-Title {
+  text-align: center;
+}
+
+.NumbersBlock-Container {
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  grid-auto-rows: 100px;
+  gap: 4px;
+}
