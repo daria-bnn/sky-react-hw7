@@ -33,7 +33,7 @@ const BasketBooks = () => {
           {books.map((book, index) => (
             <BookCart
               book={book}
-              i={index}
+              index={index}
               key={book.id}
               setQuatinty={setQuatinty}
               deleteBook={deleteBook}

@@ -2,12 +2,12 @@ import PropTypes from 'prop-types'
 
 import MinMaxCounter from './MinMaxCounter/MinMaxCounter'
 
-const BookCart = (props) => {
-  const { id, title, price, quantity, rest } = props.book
+const BookCart = ({ book, index, setQuatinty, deleteBook }) => {
+  const { id, title, price, quantity, rest } = book
 
   return (
     <tr>
-      <td>{props.i + 1} </td>
+      <td>{index + 1} </td>
       <td>{title} </td>
       <td>{price} </td>
       <td>
@@ -15,13 +15,13 @@ const BookCart = (props) => {
           max={rest}
           min={1}
           current={quantity}
-          setQuatinty={props.setQuatinty}
+          setQuatinty={setQuatinty}
           id={id}
         />
       </td>
       <td>{quantity * price}</td>
       <td>
-        <button type="button" onClick={() => props.deleteBook(id)}>
+        <button type="button" onClick={() => deleteBook(id)}>
           Удалить
         </button>
       </td>
@@ -30,7 +30,7 @@ const BookCart = (props) => {
 }
 
 BookCart.propTypes = {
-  i: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
   book: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,

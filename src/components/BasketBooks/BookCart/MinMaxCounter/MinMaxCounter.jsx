@@ -1,32 +1,10 @@
 import PropTypes from 'prop-types'
+import checkValue from './utils/checkValue'
 
 const MinMaxCounter = ({ id, min, max, current, setQuatinty }) => {
   const validate = (event) => {
     const { value } = event.target
-    const validValues = /^[1-9]?\d*$/
-
-    if (!validValues.test(value)) {
-      return
-    }
-
-    const newText = parseInt(value, 10)
-
-    if (Number.isNaN(newText)) {
-      setQuatinty(id, value)
-      return
-    }
-
-    if (newText > max) {
-      setQuatinty(id, max)
-      return
-    }
-
-    if (newText < min) {
-      setQuatinty(id, min)
-      return
-    }
-
-    setQuatinty(id, newText)
+    setQuatinty(id, checkValue(value, min, max))
   }
 
   const increase = () => {
