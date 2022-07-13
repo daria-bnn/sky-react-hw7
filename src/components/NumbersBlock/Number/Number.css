@@ -1,0 +1,20 @@
+.Number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-size: 24px;
+}
+
+.Number_color_red {
+  background-color: #bc5d58;
+}
+
+.Number_color_yellow {
+  background-color: #ffca86;
+}
+
+.Number_color_green {
+  background-color: #89a089;
+}
